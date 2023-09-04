@@ -2,7 +2,7 @@
 
 # Electrónica Microcontrolada
 
-## Trabajo Practico “Programación en ASM”
+### **Trabajo Practico “Programación en ASM”**
 
 ![line](/Desarrollo/assets/line.png)
 >👨‍🏫 **Cristian Gonzalo Vera**. Prof. Instituto Superior Politécnico Córdoba y Desarrolador IoT. [Ver Github](https://github.com/Gona79).
