@@ -13,7 +13,7 @@
 ### Año - **2023**
 ![line](/Desarrollo/assets/line.png)
 
-### Estación Meteorológica con Conectividad
+# Estación Meteorológica con Conectividad
 
 **Descripción:** Diseñar una estación meteorológica que pueda recolectar
 datos del clima y enviarlos a un servidor a través de WiFi o Ethernet.
