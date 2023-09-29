@@ -19,7 +19,9 @@ delay3			; retardo 3
 contador			; contador de digito
      endc
 
-#define	_kte_delay3	h'0F'	
+#define	_kte_delay3	h'13'
+#define	_kte_delay2	h'13'
+#define	_kte_delay1	h'13'	
 
      org 0
 Start:
@@ -41,6 +43,12 @@ Main:
 	
 	movlw	_kte_delay3	; carga valor a 
 	movwf	delay3		; Retardo 3 de ALTO nivel
+	
+	movlw	_kte_delay2	; carga valor a 
+	movwf	delay2		; Retardo 2 de ALTO nivel
+	
+	movlw	_kte_delay1	; carga valor a 
+	movwf	delay1		; Retardo 1 de ALTO nivel
 
 Loop:
 	decfsz  	delay1,f       ; decremente Retardo de BAJO nivel  
@@ -73,4 +81,3 @@ Tabla_code_7_seg 			; Tabla para display de 7 segmentos.
 	retlw 67h 	; numero "9".
     
 	end
-
