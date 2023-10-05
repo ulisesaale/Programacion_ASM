@@ -5,3 +5,8 @@
 **Imagenes de los componentes**
 
 
+![pic](/Desarrollo/assets/pic16f84a.jfif)
+
+![display](/Desarrollo/assets/display7segcc.jfif)
+
+![esquema](/Desarrollo/assets/proyectoDisplay.png)
