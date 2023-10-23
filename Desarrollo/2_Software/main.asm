@@ -27,30 +27,30 @@ HORS_INI	equ	D'244'		; Constante para cuenta de horas
 HORS_12H	equ	D'243'		; Constante para cuenta de horas
 
 ADJMIN		equ	D'9'		; Número de "frac_sec" que se necesita sumar cada minuto
-					; para ajustar el tiempo
+							; para ajustar el tiempo
 ADJHOR		equ	D'34'		; Número de "frac_sec" que se necesita restar cada hora
-					; para ajustar el tiempo
+							; para ajustar el tiempo
 ADJDIA		equ	D'3'		; Número de "frac_sec" que se necesita sumar cada 12 horas
-					; para ajustar el tiempo
+							; para ajustar el tiempo
 
 ; Activación de RB1-3 para las entradas de los pulsadores
 PULSADOR	equ	B'00001110'	; RB1, RB2 y RB3
 
 ; Asignación de banderas. Los pulsadores activos proporcionan un "1"
 
-CHG		equ	H'03'		; Indica que se ha activado un pulsador o que es necesario
-					; actualizar los valores de la hora que tienen que mostrarse
-					; en los displays
+CHG			equ	H'03'		; Indica que se ha activado un pulsador o que es necesario
+							; actualizar los valores de la hora que tienen que mostrarse
+							; en los displays
 PSEG		equ	H'04'		; Pulsador A, modo segundero.
 PMIN		equ	H'05'		; Pulsador B, avance rápido minutos.
 PHOR		equ	H'06'		; Pulsador C, avance rápido horas.
 P_ON		equ	H'07'		; Un pulsador ha sido activado
 
 DSPOFF		equ	B'11111111'	; Displays apagados (PORTA)
-					; gfedcbap
+							; gfedcbap
 CERO		equ	H'7E'		; 01111110
-UNO		equ	H'0C'		; 00001100
-DOS		equ	H'B6'		; 10110110
+UNO			equ	H'0C'		; 00001100
+DOS			equ	H'B6'		; 10110110
 TRES		equ	H'9E'		; 10011110
 CUATRO		equ	H'CC'		; 11001100
 CINCO		equ	H'DA'		; 11011010
@@ -59,14 +59,14 @@ SIETE		equ	H'0E'		; 00001110
 OCHO		equ	H'FE'		; 11111110
 NUEVE		equ	H'DE'		; 11011110
 SEGM_OFF	equ	H'00'		; Todos los segmentos apagados. Separador entre horas
-					; y minutos apagado (RB0).
+							; y minutos apagado (RB0).
 
 frac_sec	equ	H'0C'		; Fracciones de segundo (1/244)
 segundos	equ	H'0D'		; Segundos
 minutos		equ	H'0E'		; Minutos
 horas		equ	H'0F'		; Horas
 conta1		equ	H'10'		; Variable 1 para bucle contador
-;
+
 display		equ	H'11'		; Indicador de display que debe actualizarse
 digito1		equ	H'12'		; Display unidad de minuto / unidad de segundo
 digito2		equ	H'13'		; Display decena de minuto / decena de segundo
@@ -77,14 +77,14 @@ banderas	equ	H'16'		; Banderas; 3-CHG, 4-PSEG, 5-PMIN, 6-PHOR, 7-P_ON
 ;====================================================================
 ; Inicio
 ;====================================================================
-	ORG	0x00			;Vector de Reset
+	ORG	0x00				;Vector de Reset
 	goto	INICIO
-	org	0x05			;Salva el vector de interrupción
+	org	0x05				;Salva el vector de interrupción
 
 ;**************************************************************
 ; SUBRUTINAS
 ;**************************************************************
-CODIGO_7S				; Devuelve el código 7 segmentos
+CODIGO_7S					; Devuelve el código 7 segmentos
 	addwf	PCL,F
 	retlw	CERO
 	retlw	UNO
@@ -102,14 +102,14 @@ CODIGO_7S				; Devuelve el código 7 segmentos
 ;**************************************************************
 INICIO
 ;  Configurar puertos como salidas, blanquear display
-	bsf	STATUS,RP0		; Activa el banco de memoria 1.
+	bsf		STATUS,RP0		; Activa el banco de memoria 1.
 	movlw	B'10000011'		; Configuración del registro Option, RB Pull Up desconectadas
 	movwf	OPTION_REG		; TMR0 en modo temporizador (uso de pulsos de reloj internos, Fosc/4)
-					; prescaler TMR0 a 1:16
+							; prescaler TMR0 a 1:16
 	movlw	B'00000000'
 	movwf	TRISA			; Pone todas las patillas del puerto A como salidas
 	movwf	TRISB			; Pone todas las patillas del puerto B como salidas
-	bcf	STATUS,RP0		; Activa el banco de memoria 0.
+	bcf		STATUS,RP0		; Activa el banco de memoria 0.
 
 ; Establecer estados iniciales de las salidas
 	movlw	DSPOFF
