@@ -34,44 +34,7 @@ El estudiante debe elegir el microcontrolador más apropiado para su proyecto, y
 sea de la familia PIC o AVR.*
 
 
-### ***Ejercicio 1:*** Sistema de Alarma con Interfaz de Usuario  
-
-**Descripción:** Diseñar un sistema de alarma para una casa que incluya una
-interfaz de usuario simple.
-
-**Requisitos:** Utilizar sensores de puertas/ventanas, un teclado numérico
-para la activación/desactivación y un display LCD para mostrar el estado.
-
-**Microcontroladores sugeridos:** A elección del estudiante. Deben justificar
-su selección en base a los requisitos del proyecto.
-
-
-### ***Ejercicio 2:*** Control de Temperatura
-
-**Descripción:** Diseñar un sistema para controlar la temperatura de una
-habitación pequeña.
-
-**Requisitos:** Utilizar un sensor de temperatura y controlar un ventilador o
-calefactor mediante una salida de PWM.
-
-**Microcontroladores sugeridos:** A elección del estudiante. Deben justificar
-su selección en base a los requisitos del proyecto.
-
-
-### ***Ejercicio 3:*** Estación Meteorológica con Conectividad
-
-**Descripción:** Diseñar una estación meteorológica que pueda recolectar
-datos del clima y enviarlos a un servidor a través de WiFi o Ethernet.
-
-**Requisitos:** Utilizar sensores de temperatura, humedad, presión, y
-velocidad del viento. Implementar conectividad a Internet para el envío de
-datos.
-
-**Microcontroladores sugeridos:** A elección del estudiante. Deben justificar
-su selección en base a los requisitos del proyecto.
-
-
-### ***Ejercicio 4:*** Reloj Digital con Display de 7 Segmentos
+### ***Ejercicio 1:*** Reloj Digital con Display de 7 Segmentos
 
 **Descripción:** Diseñar un reloj digital que muestre la hora actual en un
 display de 7 segmentos.
